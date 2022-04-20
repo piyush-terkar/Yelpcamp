@@ -48,6 +48,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const scriptSrcUrls = [
   "https://stackpath.bootstrapcdn.com/",
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
+  "https://code.jquery.com/jquery-3.2.1.slim.min.js",
   "https://api.tiles.mapbox.com/",
   "https://api.mapbox.com/",
   "https://kit.fontawesome.com/",
@@ -56,6 +58,7 @@ const scriptSrcUrls = [
 ];
 const styleSrcUrls = [
   "https://kit-free.fontawesome.com/",
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
   "https://stackpath.bootstrapcdn.com/",
   "https://cdn.jsdelivr.net/",
   "https://api.mapbox.com/",
