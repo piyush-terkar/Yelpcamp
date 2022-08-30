@@ -22,8 +22,8 @@ const reviewRoutes = require("./routes/reviews");
 
 const MongoDBStore = require("connect-mongo")(session);
 
-const dburl = process.env.DB_URL || "mongodb://localhost:27017/yelp-camp";
-// "mongodb://localhost:27017/yelp-camp"
+const dburl = "mongodb://localhost:27017/yelp-camp";
+// "mongodb://localhost:27017/yelp-camp" process.env.DB_URL ||
 mongoose.connect(dburl, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -76,7 +76,7 @@ const fontSrcUrls = [];
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: [],
+      defaultSrc: ["'self'"],
       connectSrc: ["'self'", ...connectSrcUrls],
       scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
       styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
@@ -162,6 +162,6 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
+app.listen("192.168.1.7", port, () => {
   console.log(`Serving on port ${port}`);
 });
